@@ -39,6 +39,17 @@
                 }
             });
         });
+
+        $('.display-view').click(function () {
+            $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: '@Url.Action("DisplayViewWithAjax")',
+                success: function (result) {
+                    $('#result4').html(result);
+                }
+            });
+        });
     });
     </script>
 </head>
@@ -54,5 +65,9 @@
     <h2>Using JSON to display an Object</h2>
     <h4 class="display-object">Display Object</h4>
     <div id="result3"></div>
+
+    <h2>Displaying a view</h2>
+    <h4 class="display-view">Display view</h4>
+    <div id="result4"></div>
 </body>
 </html>
